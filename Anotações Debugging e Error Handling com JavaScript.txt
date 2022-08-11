@@ -1,0 +1,36 @@
+Tipos de erros: ECMAScript Error e DOMException.
+
+ECMAScript Error: 
+- Esqueceu o ponto e vírgula (;), variável não declarada e etc;
+- Call Stack: pilha de chamada até chegar ao erro (Ex: "InvalidMessage: Mensagem Inválida\n at <anonymous>:3:17"). Diz o que foi executado e onde foi encontrado o erro.
+- Ex: Uncaught ReferenceError: a is not defined
+        at <anonymous>:1:11
+- Mensagem = a is not defined.
+- Nome = ReferenceError.
+- Linha = :1:11 (linha 1, coluna 11).
+
+DOMException:
+- Exceção ou erro do DOM (document object model);
+- Acontece quando relacionamos o código js a uma página da web;
+- Exemplo: String com caractere inválido e nó não pode ser inserido (inserir um elemento em um local inválido da árvore DOM);
+- São erros referentes a estrutura da árvore de elementos de uma página da web.
+
+Tratando erros: Throw, Try/Catch e Finally.
+- Throw: vai ver se a String que você vai mandar é um palíndromo ou não.
+- Diferença entre "throw" e "return": 
+Return --> retorna uma String qualquer (ex: "String inválida").
+Throw --> trata como sendo um erro (ex: Uncaught String inválida).
+
+Implementação da declaração try/catch: 
+- Try...catch: dentro do bloco try, verifica um pedaço de código. Se tiver algum tipo de erro, ele vai ser capturado (catch). Pode manipular dentro do catch esse erro.
+- throw dentro do catch = Uncaught String inválida.
+
+Finally:
+- Vai ser executado com presença de erro ou não.
+- Img 1: com erro.
+- Img 2: sem erro.
+
+Criando erros personalizados:
+- Objeto Error: parâmetros (mensagem, nome do arquivo e número da linha). Todos os parâmetros são opcionais. fileName e lineNumber não são padrão (alguns navegadores não vão funcionar).
+- Instanciamento, nova instância --> Ex: new Error.
+- O erro pode ter um nome (Ex: meuErro.name = "InvalidMessage" --> Uncaught InvalidMessage). 
